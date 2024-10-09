@@ -23,7 +23,8 @@ namespace :fetch_transactions do
         sender: transaction_payload["sender"],
         receiver: transaction_payload["receiver"],
         gas_burnt: transaction_payload["gas_burnt"],
-        blockchain_id: blockchain.id
+        blockchain_id: blockchain.id,
+        external_id: transaction_payload["id"]
       )
       transaction_payload["actions"].each do |action|
         Action.find_or_create_by!(
