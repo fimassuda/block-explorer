@@ -60,6 +60,11 @@ To start the application:
 bin/dev
 ```
 
+## Access the application
+
+Go to http://localhost:3000
+
+
 ## Database Modeling
 
 ![Database Model](database-models.png)
