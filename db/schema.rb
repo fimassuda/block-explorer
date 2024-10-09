@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_09_175057) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_09_181427) do
   create_table "actions", force: :cascade do |t|
     t.string "action_type"
     t.integer "gas"
@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_09_175057) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "blockchain_id"
+    t.string "external_id"
   end
 
   add_foreign_key "actions", "transactions"
