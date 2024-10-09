@@ -1,27 +1,28 @@
 <div class="w-full">
-  <div class="flex justify-center items-center">
+  <div class="flex justify-center items-center py-8">
     <h1 class="font-bold text-4xl">Block Explorer</h1>
   </div>
 
-  <div id="gas_burnt" class="flex flex-row justify-end py-8">
+  <div id="gas_burnt" class="flex flex-row justify-end p-2">
     <span class="font-semibold">Average Gas Burnt:</span> <%= @average_gas_burnt %>
   </div>
+  
+  <div id="transfers" class=" p-8 border rounded-lg overflow-scroll">
 
-  <div id="transfers" class=" py-8">
-    <table class="w-full table-auto border">
-      <thead class="">
+    <table class="w-full table-auto">
+      <thead class="border-b">
         <tr class="h-8">
-          <th class="text-center font-semibold border">Sender</th>
-          <th class="text-center font-semibold border">Receiver</th>
-          <th class="text-center font-semibold border">Deposit</th>
+          <th class="p-4 text-left font-semibold">Sender</th>
+          <th class="p-4 text-left font-semibold">Receiver</th>
+          <th class="p-4 text-left font-semibold">Deposit</th>
         </tr>
       </thead>
       <tbody class="">
         <% @transfers.each do |transfer| %>
-          <tr class="p-4 border">
-            <td class="p-4 border"><%= transfer.block_transaction.sender %></td>
-            <td class="p-4 border"><%= transfer.block_transaction.receiver %></td>
-            <td class="p-4 border"><%= transfer.deposit_value %></td>
+          <tr class="border-b">
+            <td class="p-4 text-sm"><%= transfer.block_transaction.sender %></td>
+            <td class="p-4 text-sm"><%= transfer.block_transaction.receiver %></td>
+            <td class="p-4 text-sm"><%= transfer.deposit_value %></td>
           </tr>
         <% end %>
       </tbody>
