@@ -82,7 +82,7 @@ transaction = Transaction.find_or_create_by!(
 )
 
 Action.find_or_create_by!(
-  action_type: 'Transfer',
+  action_type: ACTION::TRANSFER,
   gas: nil,
   deposit: '716669915088987500000000000',
   method_name: nil,
