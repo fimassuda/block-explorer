@@ -10,11 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_09_141200) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_09_162025) do
+  create_table "actions", force: :cascade do |t|
+    t.string "action_type"
+    t.integer "gas"
+    t.string "deposit"
+    t.string "method_name"
+    t.integer "transaction_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["transaction_id"], name: "index_actions_on_transaction_id"
+  end
+
   create_table "blockchains", force: :cascade do |t|
     t.string "name"
     t.string "endpoint"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "gas_burnt"
+    t.datetime "time"
+    t.string "transaction_hash"
+    t.string "block_hash"
+    t.string "sender"
+    t.string "receiver"
+    t.bigint "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "blockchain_id"
+  end
+
+  add_foreign_key "actions", "transactions"
 end

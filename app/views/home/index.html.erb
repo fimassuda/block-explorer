@@ -1,0 +1,36 @@
+<div class="w-full">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Block Explorer</h1>
+    <%= link_to "New blockchain", new_blockchain_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+
+    // list all the transactions
+    // list table of all the transactions from @transactions
+    // showing the fields blockchain, sender, receiver, deposit
+    // and a link to show the transaction
+    <table class="min-w-full">
+      <thead>
+        <tr>
+          <th class="font-medium">Blockchain</th>
+          <th class="font-medium">Sender</th>
+          <th class="font-medium">Receiver</th>
+          <th class="font-medium">Deposit</th>
+          <th class="font-medium">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.blockchain %></td>
+            <td><%= transaction.sender %></td>
+            <td><%= transaction.receiver %></td>
+            <td><%= transaction.deposit %></td>
+            <td>
+              <%= link_to "Show", transaction, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
