@@ -9,6 +9,7 @@ class Action < ApplicationRecord
 
   # Deposit value at the factor 10^24
   def deposit_value
-    deposit.to_f / 10**24
+    value = deposit.to_f / 10**24
+    "#{value} #{block_transaction.blockchain.symbol}"
   end
 end

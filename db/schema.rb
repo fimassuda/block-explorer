@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_09_162025) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_09_175057) do
   create_table "actions", force: :cascade do |t|
     t.string "action_type"
     t.integer "gas"
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_09_162025) do
     t.string "endpoint"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "symbol"
   end
 
   create_table "transactions", force: :cascade do |t|
