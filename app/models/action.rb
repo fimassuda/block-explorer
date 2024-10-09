@@ -1,8 +1,8 @@
 class Action < ApplicationRecord
   belongs_to :block_transaction, class_name: "Transaction", foreign_key: "transaction_id"
 
-  TRANSFER = "transfer"
-  FUNCTION_CALL = "function_call"
+  TRANSFER = "Transfer"
+  FUNCTION_CALL = "FunctionCall"
   ACTION_TYPES = [TRANSFER, FUNCTION_CALL]
 
   validates :action_type, presence: true
