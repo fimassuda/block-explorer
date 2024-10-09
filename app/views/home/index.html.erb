@@ -1,36 +1,30 @@
 <div class="w-full">
-  <div class="flex justify-between items-center">
+  <div class="flex justify-center items-center">
     <h1 class="font-bold text-4xl">Block Explorer</h1>
-    <%= link_to "New blockchain", new_blockchain_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
 
-    // list all the transactions
-    // list table of all the transactions from @transactions
-    // showing the fields blockchain, sender, receiver, deposit
-    // and a link to show the transaction
-    <table class="min-w-full">
-      <thead>
-        <tr>
-          <th class="font-medium">Blockchain</th>
-          <th class="font-medium">Sender</th>
-          <th class="font-medium">Receiver</th>
-          <th class="font-medium">Deposit</th>
-          <th class="font-medium">Actions</th>
+  <div id="gas_burnt" class="flex flex-row justify-end py-8">
+    <span class="font-semibold">Average Gas Burnt:</span> <%= @average_gas_burnt %>
+  </div>
+
+  <div id="transfers" class=" py-8">
+    <table class="w-full table-auto border">
+      <thead class="">
+        <tr class="h-8">
+          <th class="text-center font-semibold border">Sender</th>
+          <th class="text-center font-semibold border">Receiver</th>
+          <th class="text-center font-semibold border">Deposit</th>
         </tr>
       </thead>
-      <tbody>
-        <% @transactions.each do |transaction| %>
-          <tr>
-            <td><%= transaction.blockchain %></td>
-            <td><%= transaction.sender %></td>
-            <td><%= transaction.receiver %></td>
-            <td><%= transaction.deposit %></td>
-            <td>
-              <%= link_to "Show", transaction, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-            </td>
+      <tbody class="">
+        <% @transfers.each do |transfer| %>
+          <tr class="p-4 border">
+            <td class="p-4 border"><%= transfer.block_transaction.sender %></td>
+            <td class="p-4 border"><%= transfer.block_transaction.receiver %></td>
+            <td class="p-4 border"><%= transfer.deposit_value %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
-    
   </div>
 </div>
