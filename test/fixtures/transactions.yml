@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gas_burnt: 1
+  time: 2024-10-09 09:10:22
+  transaction_hash: MyString
+  block_hash: MyString
+  sender: MyString
+  receiver: MyString
+  height: 1
+
+two:
+  gas_burnt: 1
+  time: 2024-10-09 09:10:22
+  transaction_hash: MyString
+  block_hash: MyString
+  sender: MyString
+  receiver: MyString
+  height: 1
